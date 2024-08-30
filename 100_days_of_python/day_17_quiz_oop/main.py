@@ -12,10 +12,10 @@ for question in question_data:
 
 
 quizbrain = QuizBrain(question_bank)
-while True:
+while quizbrain.still_has_questions():
     response = quizbrain.new_question()
     quizbrain.check_answer(response)
     question_number = quizbrain.question_number
-    if question_number == len(question_bank):
-        print(f"You've completed the quiz! Your final score is {quizbrain.score}/{question_number}")
-        break
+print(f"You've completed the quiz! Your final score is {quizbrain.score}/{question_number}")
+    
+    

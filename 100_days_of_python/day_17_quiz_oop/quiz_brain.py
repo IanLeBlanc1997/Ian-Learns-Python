@@ -6,9 +6,12 @@ class QuizBrain:
 
     def new_question(self):
         text = self.question_list[self.question_number]
-        response = input(f"Q{self.question_number}: {text.text} (True/False)?\n").lower()
+        response = input(f"Q{self.question_number+1}: {text.text} (True/False)?\n").lower()
         return response
-
+    
+    def still_has_questions(self):
+        return self.question_number < len(self.question_list)
+        
     def check_answer(self, response):
         answer = self.question_list[self.question_number]
         if response == answer.answer.lower():
