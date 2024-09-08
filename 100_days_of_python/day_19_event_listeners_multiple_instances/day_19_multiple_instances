@@ -1,0 +1,41 @@
+from turtle import Turtle, Screen
+import random
+screen = Screen()
+screen.setup(width = 500, height= 400)
+color_list = ["red",'blue','black',"violet","orange",'green','yellow','indigo']
+all_turtles = []
+def turtle_set_up(color_list):
+    x = 180
+    for turtle_index in range(0,7):
+        #here we create seven turtle objects all with the same name. 
+        #I'm not sure if they can be individually called upon because they have the same name
+        new_turtle = Turtle(shape="turtle")
+        new_turtle.color(color_list[turtle_index])
+        new_turtle.up()
+        new_turtle.width(75)
+        new_turtle.goto(-230,x)
+        x -= (400/7)
+        all_turtles.append(new_turtle)
+
+def race(is_race_on):
+    while is_race_on:
+        for turtle in all_turtles:
+            turtle.forward(random.randint(1,25))
+            if turtle.xcor() > 230:
+                is_race_on = False
+                return turtle
+        
+turtle_set_up(color_list)
+bet = screen.textinput(title= "Who are you betting on?", prompt= "Enter the color").lower()
+if bet:
+    is_race_on = True
+winner = race(is_race_on)
+print(f"The {winner.pencolor()} turtle won!")
+if winner.pencolor() == bet:
+    print("You won your bet!")
+else:
+    print("You lose your bet")
+
+print(all_turtles)
+
+screen.exitonclick
