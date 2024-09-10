@@ -20,6 +20,10 @@ screen.onkey(snake.up,"Up")
 screen.onkey(snake.down, "Down")
 screen.onkey(snake.right, "Right")
 screen.onkey(snake.left, "Left")
+screen.onkey(snake.up,"w")
+screen.onkey(snake.down, "s")
+screen.onkey(snake.right, "d")
+screen.onkey(snake.left, "a")
 
 r,g,b = food.food_color()
 print(r,g,b)
@@ -27,6 +31,7 @@ while game_is_on:
     screen.update()
     time.sleep(.06)
     snake.move()
+    #snake eating food
     if snake.segments[0].distance(food) < 15:
         snake.eat(r,g,b)
         for n in range (0,3):
@@ -34,12 +39,14 @@ while game_is_on:
         food.eat()
         r,g,b = food.food_color()
         scoreboard.update()
+        #snake colliding with wall
     if snake.segments[0].xcor() > 490 or snake.segments[0].xcor() < -490:
         game_is_on = False
     if snake.segments[0].ycor() > 390 or snake.segments[0].ycor() < -390:
         game_is_on = False 
-    for n in range(3,len(snake.segments)-1):
-        if snake.segments[0].distance(snake.segments[n]) < 20:
+        #snake colliding with self
+    for segment in snake.segments[1:]:
+        if snake.segments[0].distance(segment) < 10:
             game_is_on = False
 
 

@@ -41,7 +41,6 @@ class Snake:
          self.segments[0].seth(180)
 
    def eat(self,r,g,b):
-     
       self.new_segment = Turtle("square")
       self.new_segment.up()
       self.new_segment.color(r,g,b)
