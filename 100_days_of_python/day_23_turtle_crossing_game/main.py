@@ -28,7 +28,7 @@ for n in range (1,25):
     cars = Car()
     traffic.append(cars) 
 for car in traffic:
-    car.forward(random.randint(100,500))  
+    car.forward(random.randint(50,500))  
 screen.update()
 
 
@@ -37,7 +37,7 @@ while game_is_on:
     screen.update()
     time.sleep(.01)
     for car in traffic:
-        car.forward(1)    
+        car.forward(1 + difficulty/25)    
     create_car = random.randint(difficulty,25)
     if create_car == 25:
         cars = Car()
@@ -58,15 +58,10 @@ while game_is_on:
         scoreboard.win_level()
         player.win_level()
         difficulty +=1
+    if difficulty == 25:
+        scoreboard.you_win()
+        game_is_on=game_over
 
 
             
-        
-    
-
-
-
-
-
-
 screen.exitonclick()
