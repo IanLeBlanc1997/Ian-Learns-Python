@@ -30,3 +30,4 @@ class Player(Turtle):
             None
     def win_level(self):
         self.goto(0,-360)
+        

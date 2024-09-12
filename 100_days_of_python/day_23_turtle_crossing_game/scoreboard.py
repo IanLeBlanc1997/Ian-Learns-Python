@@ -4,7 +4,7 @@ font = ("Courier",50,'bold')
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
-        self.score = 0
+        self.score = 1
         self.penup()
         self.hideturtle()
         self.goto(-450,330)
@@ -20,3 +20,9 @@ class Scoreboard(Turtle):
         self.goto(0,0)
         self.clear()
         self.write(f"Game Over\nFinal Score:{self.score}",align="center",font=font)
+
+    def win_game(self):
+        self.goto(0,0)
+        self.clear()
+        self.write(f"You Win!!!",align="center",font=font)
+        

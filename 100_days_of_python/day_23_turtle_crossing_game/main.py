@@ -5,6 +5,7 @@ from scoreboard import Scoreboard
 import time
 import random
 screen = Screen()
+screen.title("Turtle Frogger")
 screen.setup(1000,800)
 screen.colormode(255)
 screen.listen()
@@ -15,6 +16,10 @@ screen.onkey(player.up,"w")
 screen.onkey(player.down,"s")
 screen.onkey(player.left,"a")
 screen.onkey(player.right,"d")
+screen.onkey(player.up,"Up")
+screen.onkey(player.down,"Down")
+screen.onkey(player.left,"Left")
+screen.onkey(player.right,"Right")
 
 game_is_on = True
 def game_over():
@@ -59,8 +64,7 @@ while game_is_on:
         player.win_level()
         difficulty +=1
     if difficulty == 25:
-        scoreboard.you_win()
-        game_is_on=game_over
+        scoreboard.reset()
 
 
             

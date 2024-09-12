@@ -37,11 +37,11 @@ while game_is_on:
     #collision
     if ball.ycor() > 370 or ball.ycor() < -370:
         ball.bounce()
-    if ball.xcor() < -360 and ball.xcor() > -400 and ball.distance(left_paddle.pos()) <= 50:
+    if ball.xcor() < -385 and ball.xcor() > -400 and ball.distance(left_paddle.pos()) <= 50:
         ball.hit()
         r,g,b = ball.recolor()
         left_paddle.recolor(r,g,b)
-    if ball.xcor() > 360 and ball.xcor() < 400 and ball.distance(right_paddle.pos()) <= 50:
+    if ball.xcor() > 385 and ball.xcor() < 400 and ball.distance(right_paddle.pos()) <= 50:
         ball.hit()
         r,g,b = ball.recolor()
         right_paddle.recolor(r,g,b)
