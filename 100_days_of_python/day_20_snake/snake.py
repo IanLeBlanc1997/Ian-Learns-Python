@@ -49,21 +49,21 @@ class Snake():
 
    def adjust(self):
       head = self.segments[0]
-      second_segment = self.segments[2]
+      second_segment = self.segments[1]
       if head.heading() == 0 or head.heading() == 180:
          if head.ycor() > second_segment.ycor():
             head.goto(head.xcor(),head.ycor()+10)
          elif head.ycor() < second_segment.ycor():
             head.goto(head.xcor(),head.ycor()-10)
          else:
-            head.goto(head.xcor(),head.ycor()-20)
+            pass
       if head.heading() == 90 or head.heading() ==270:
          if head.xcor() > second_segment.xcor():
             head.goto(head.xcor() + 20,head.ycor())
          elif head.xcor() < second_segment.ycor():
             head.goto(head.xcor() - 20,head.ycor())
          else:
-            head.goto(head.xcor() -20,head.ycor())
+            pass
      
      
 

@@ -23,12 +23,10 @@ screen.onkey(snake.up,"w")
 screen.onkey(snake.down, "s")
 screen.onkey(snake.right, "d")
 screen.onkey(snake.left, "a")
-def pause():
-    time.sleep(infinity)
 
 r,g,b = food.food_color()
-for n in range (107):
-    snake.eat(r,g,b)
+# for n in range (107):
+#     snake.eat(r,g,b)
 while game_is_on:
     screen.update()
     time.sleep(.1)
@@ -56,8 +54,6 @@ while game_is_on:
         if snake.segments[0].distance(segment) < 20:
             scoreboard.reset()
             snake.reset()
-    
-
 
 
 screen.exitonclick()
