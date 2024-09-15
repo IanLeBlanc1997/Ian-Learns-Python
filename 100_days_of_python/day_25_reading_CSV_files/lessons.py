@@ -20,14 +20,15 @@
 
 # #creating a dataframe from scratch 
 
-import pandas
-data_dict = {
-    "students":['ian','aiiden','chris'],
-    "scores":[10,10,10,10]
-}
+# import pandas
+# data_dict = {
+#     "students":['ian','aiiden','chris'],
+#     "scores":[10,10,10]
+# }
 
-data = pandas.DataFrame(data_dict)
-print(data)
+# data = pandas.DataFrame(data_dict)
+# data.to_csv("/Users/ianleblanc/Desktop/data")
+
 
 
 
