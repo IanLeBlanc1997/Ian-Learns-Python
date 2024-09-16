@@ -6,16 +6,13 @@ screen.bgpic("day_25_reading_CSV_files/US_States_Quiz/blank_states_img.gif")
 data = pandas.read_csv("day_25_reading_CSV_files/US_States_Quiz/50_states.csv")
 game_is_on = True
 all_states = list(data.state)
-states_guessed=[]
+guessed_states=[]
 missed_states=[]
 total_guesses = 0
 
 
-def analysis(states_guessed):
-    for guessed_state in states_guessed:
-        for state in all_states:
-            if guessed_state == state:
-                all_states.remove(guessed_state)
+def analysis(guessed_states):
+    missing_states = [all_states.remove(state) for state in guessed_states]
     missing_states = pandas.DataFrame(all_states)   
     missing_states.to_csv("day_25_reading_CSV_files/US_States_Quiz/states to learn")            
     print(f"You missed {all_states}")
@@ -29,10 +26,10 @@ while game_is_on:
             state_label.up()
             state_label.goto(state_row.x.item(),state_row.y.item())
             state_label.write(guess)
-            states_guessed.append(guess)
+            guessed_states.append(guess)
             total_guesses+=1
         if guess == 'Exit':
-            analysis(states_guessed)
+            analysis(guessed_states)
             game_is_on = False
             break
         else:
