@@ -6,7 +6,6 @@ my_email = 'ian@gmail.com'
 # check what today is and if today is someone's birthday
 birthdays = pandas.read_csv("day_32_automated_birthday_wisher/birthdays.csv")
 
-
 today = dt.datetime.now()
 month = today.month
 day = today.day
