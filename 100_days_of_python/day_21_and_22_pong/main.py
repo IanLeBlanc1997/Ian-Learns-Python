@@ -25,7 +25,7 @@ game_is_on = True
 
 while game_is_on:
     screen.update()
-    time.sleep(.1)
+    time.sleep(.05)
     ball.move()
     #scoring
     if ball.xcor() > 500:
