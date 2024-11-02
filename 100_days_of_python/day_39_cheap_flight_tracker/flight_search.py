@@ -20,6 +20,7 @@ class FlightSearch:
         """Queries the api"""
         endpoint = 'https://test.api.amadeus.com/v2/shopping/flight-offers'
         response = requests.get(endpoint,headers=self.auth,params=parameters)
+        # print(f'this is the real response message:{response.text}') 
         response.raise_for_status()
         results = response.json()
         return results

@@ -14,7 +14,7 @@ flight_searcher = FlightSearch()
 data_manager = DataManager() #establishing classes
 
 # main query parameters boilerplate
-parameters = {'originLocationCode':'CVG','destinationLocationCode':'','adults':'1','departureDate':'','maxPrice':''}
+parameters = {'originLocationCode':'CVG','destinationLocationCode':'','adults':'1','departureDate':'','maxPrice':'','currencyCode':'USD'}
 
 city_codes_list, price_points = data_manager.get_data()  #getting the cities and pricepoints from the google sheet
 for city in range(len(city_codes_list)): #setting an iterable for each city on the excel sheet
