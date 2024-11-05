@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+}
+#daenerys {
+  border: 5px solid white;
+  width: 100%;
+}
+h1 {
+  font-family: Libre Baskerville;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+p {
+  font-family: Libre Baskerville;
+  color: white;
+  text-align: center;
+  font-size: 0.5em;
+}
+#all {
+  width: 50%;
+  margin-left: 25%;
+}
