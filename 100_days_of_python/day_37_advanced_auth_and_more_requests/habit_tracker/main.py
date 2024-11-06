@@ -1,6 +1,7 @@
 import requests
-token = '16fjkd9sjk'
-username = 'ianleblanc'
+import os
+token = os.getenv("HABIT_TRACKER_TOKEN")
+username = os.getenv("HABIT_TRACKER_UN")
 pixela_endpoint ='https://pixe.la/v1/users'
 parameters = {'token':token,'username':username,'agreeTermsOfService':'yes','notMinor':'yes'}
 # response = requests.post(url=pixela_endpoint,json=parameters)

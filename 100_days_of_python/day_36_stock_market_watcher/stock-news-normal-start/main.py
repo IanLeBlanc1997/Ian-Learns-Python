@@ -1,10 +1,12 @@
+import os
+
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
-stock_apikey = 'M36GTKBC5QPHXLN0'
+stock_apikey = os.getenv("STOCK_API_KEY")
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
-news_apikey = 'bc3754c3553b41e79b7d5e387b681f8d'
+news_apikey = os.getenv("NEWS_APIKEY")
 
 import requests 
 import pandas

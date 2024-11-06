@@ -1,6 +1,6 @@
 import requests 
 from datetime import datetime
-
+import os
 #date time setup
 today = datetime.now()
 year = today.year
@@ -8,8 +8,8 @@ month = today.month
 day = today.day
 
 #exercise entry and response
-exercise_api_key = '021aa3d694a7e623f462d170368e9897'
-exercise_app_id = 'a0aa816b'
+exercise_api_key = os.getenv("EXERCISE_APP_KEY")
+exercise_app_id = os.getenv("EXERCISE_APP_ID")
 exercise_endpoint = 'https://trackapi.nutritionix.com/v2/natural/exercise'
 exercise_headers = {'Content-Type':'application/json','x-app-id':exercise_app_id,'x-app-key': exercise_api_key}
 exercise = input("What exercise have you done?\n")
