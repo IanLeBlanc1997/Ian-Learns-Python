@@ -565,7 +565,11 @@ input[type="radio"] + label:before {
 }
 
 /* List */
-
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 ol {
   list-style: decimal;
   margin: 0 0 1.5em 0;
@@ -580,6 +584,7 @@ ul {
   list-style: disc;
   margin: 0 0 1.5em 0;
   padding-left: 1em;
+  justify-content: center;
 }
 
 ul li {
@@ -602,10 +607,13 @@ ul.alt li:first-child {
 }
 
 ul.icons {
+  display: flex;
+  align-items: center;
   cursor: default;
   list-style: none;
   padding-left: 0;
   margin-top: -0.675em;
+  justify-content: center;
 }
 
 ul.icons li {
@@ -649,6 +657,7 @@ ul.icons li:nth-child(1) > a:hover:before {
   content: "copy";
   font-size: medium;
   text-align: center;
+  justify-content: center;
 }
 ul.icons li:nth-child(3) > a:hover:before {
   text-shadow: 1.25px 0px 0px #ff7496, -1.25px 0px 0px #ff7496,
@@ -709,6 +718,16 @@ dl dd {
   margin-left: 1.5em;
 }
 
+#feedback {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+}
 /* Button */
 
 input[type="submit"],
@@ -848,7 +867,7 @@ button:disabled,
   display: block;
   margin: 0 auto;
   border-radius: 100%;
-  box-shadow: 0 0 0 1.5em #ffffff;
+  box-shadow: 0 0 0 1.05em rgb(244, 243, 243);
 }
 
 #main .avatar:before {

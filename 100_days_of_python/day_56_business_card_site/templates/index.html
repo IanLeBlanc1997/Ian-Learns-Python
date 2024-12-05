@@ -79,16 +79,23 @@
 						-->
         <footer>
           <ul class="icons">
-            <li><a href="#" onclick="copy()" class="fa-phone">Phone</a></li>
+            <div class="clipboard-item" data-copy="440-787-4411">
+              <li>
+                <a href="#" class="fa-phone">Phone</a>
+              </li>
+            </div>
             <li>
               <a href="https://github.com/IanLeBlanc1997" class="fa-github"
                 >Github</a
               >
             </li>
-            <li>
-              <a href="#" onclick="copy()" class="fa-envelope">Envelope</a>
-            </li>
+            <div class="clipboard-item" data-copy="ianleblanc7667@yahoo.com">
+              <li>
+                <a href="#" class="fa-envelope">Envelope</a>
+              </li>
+            </div>
           </ul>
+          <div id="feedback">Copied to clipboard!</div>
         </footer>
       </section>
 
@@ -116,6 +123,37 @@
           ? " is-ie"
           : "";
       }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const clipboardItems = document.querySelectorAll(".clipboard-item");
+        const feedback = document.getElementById("feedback");
+
+        clipboardItems.forEach((item) => {
+          item.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Get the value to copy from the data-copy attribute
+            const textToCopy = item.getAttribute("data-copy");
+
+            // Use the Clipboard API to copy the text
+            navigator.clipboard
+              .writeText(textToCopy)
+              .then(() => {
+                // Show feedback
+                feedback.style.display = "block";
+
+                // Hide feedback after 2 seconds
+                setTimeout(() => {
+                  feedback.style.display = "none";
+                }, 1000);
+              })
+              .catch((err) => {
+                console.error("Failed to copy text: ", err);
+                alert("Failed to copy text to clipboard");
+              });
+          });
+        });
+      });
     </script>
   </body>
 </html>
