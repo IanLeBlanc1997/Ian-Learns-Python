@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>{{entry.title}}</h1>
+    <h2>{{entry.rating}}</h2>
+    <form method="POST" action="{{url_for('edit', book_id=entry.id)}}">
+      <label>New Rating</label>
+      <input name="new_rating" type="text" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
