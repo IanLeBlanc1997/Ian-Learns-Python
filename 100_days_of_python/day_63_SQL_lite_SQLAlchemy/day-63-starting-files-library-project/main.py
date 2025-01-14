@@ -26,13 +26,14 @@ class BookRatings(db.Model):
 
 # with app.app_context():
 #     db.create_all()
-with app.app_context():
-    db.drop_all()
-    db.create_all()
+# with app.app_context():
+#     db.drop_all()
+#     db.create_all()
 
 ######################## HOME #############
 @app.route('/')
 def home():
+    db.session.expire_all()
                     #### read from the sql database
     with app.app_context():
         result = db.session.execute(db.select(BookRatings).order_by(BookRatings.id))
